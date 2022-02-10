@@ -15,7 +15,7 @@ driver = webdriver.Chrome(ChromeDriverManager().install(),chrome_options=chrome_
 email_id = <emailid>
 password = <password>
 
-# FACEBOOK
+# 3. Extracting Data from a social media platform - Facebook
 
 driver.get("https://www.facebook.com/friends/list") 
 driver.maximize_window()
