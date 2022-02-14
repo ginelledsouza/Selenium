@@ -6,16 +6,40 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.action_chains import ActionChains
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--disable-notifications")
 
 driver = webdriver.Chrome(ChromeDriverManager().install(),chrome_options=chrome_options)
 
-email_id = <emailid>
-password = <password>
+# 1. Testing a website
+
+## Loading the website
+driver.get("https://pricebaba.com/") 
+driver.maximize_window()
+
+## Testing element hover capabilities
+hover_over = driver.find_element_by_id("Mobiles-main")
+
+hover = ActionChains(driver).move_to_element(hover_over)
+hover.perform()
+
+## Clicking floatable elements
+driver.find_element_by_xpath('//*[@id="Mobiles"]/div[1]/a[1]').click()
+
+## Back to homepage
+driver.find_element_by_xpath('//*[@id="mainBody"]/div[1]/div[3]/div[1]/div[1]/div/ul/li[1]/a/img').click()
+
+## Testing static elements
+driver.find_element_by_xpath('//*[@id="Mobiles-main"]/a').click()
+driver.find_element_by_xpath('//*[@id="mainBody"]/div[1]/div[6]/div[6]/div/div[1]/div[2]/ul/li[1]/a/div[1]/div/img').click()
+
 
 # 3. Extracting Data from a social media platform - Facebook
+
+email_id = <emailid>
+password = <password>
 
 driver.get("https://www.facebook.com/friends/list") 
 driver.maximize_window()
