@@ -1,7 +1,3 @@
-import os
-import requests
-import pandas as pd
-from time import sleep
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -35,6 +31,21 @@ driver.find_element_by_xpath('//*[@id="mainBody"]/div[1]/div[3]/div[1]/div[1]/di
 driver.find_element_by_xpath('//*[@id="Mobiles-main"]/a').click()
 driver.find_element_by_xpath('//*[@id="mainBody"]/div[1]/div[6]/div[6]/div/div[1]/div[2]/ul/li[1]/a/div[1]/div/img').click()
 
+# 2. Reading Data from a website
+
+website = "https://en.wikipedia.org/wiki/Selenium_(software)"
+driver.get(website) 
+driver.maximize_window()
+
+element = driver.find_element_by_xpath('//*[@id="mw-content-text"]/div[1]/p[2]')
+
+data = element.get_attribute('outerHTML')
+
+s = BeautifulSoup(data, 'html.parser') 
+
+scrapeddata = s.get_text()
+
+print("The data scraped from {} is \n{}".format(website,scrapeddata))
 
 # 3. Extracting Data from a social media platform - Facebook
 
