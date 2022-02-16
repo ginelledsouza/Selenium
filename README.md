@@ -6,11 +6,11 @@ Selenium provides a playback tool for authoring functional tests without a test 
 In this repository, we will demonstrate a step by step approach using selenium to perform the following activities:
 1. Testing a website<br>
 Testing website "https://pricebaba.com/" as an example for which we use selenium. Here we will test the following:<br>
-	1.1 Main website load<br>
-	1.2 Testing element hover capabilities<br>
-	1.3 Clicking floatable elements<br>
-	1.4 Returing to homepage <br>
-	1.5 Testing static elements<br>
+	- Main website load<br>
+	- Testing element hover capabilities<br>
+	- Clicking floatable elements<br>
+	- Returing to homepage <br>
+	- Testing static elements<br>
 2. Reading Data from a website
 3. Extracting Data from a social media platform - Facebook <br>
 Web Scraping is used to extract the data from any websites on the internet that allows their users to scrape information and 
