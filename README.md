@@ -11,7 +11,8 @@ Testing website "https://pricebaba.com/" as an example for which we use selenium
 	- Clicking floatable elements<br>
 	- Returing to homepage <br>
 	- Testing static elements<br>
-2. Reading Data from a website
+2. Reading Data from a website<br>
+Opening wikipedia and extracting information about the given link from the webpage.
 3. Extracting Data from a social media platform - Facebook <br>
 Web Scraping is used to extract the data from any websites on the internet that allows their users to scrape information and 
 data within certain boundaries. Requests and BeautifulSoup are used to scrape data from static pages. Whereas, Selenium 
