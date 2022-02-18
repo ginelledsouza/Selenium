@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 from selenium import webdriver
+from googlesearch import search
 from selenium.webdriver.common.keys import Keys
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.action_chains import ActionChains
@@ -84,3 +85,18 @@ friendsName = [pt.get_text() for pt in friendsName]
 
 # Create Dataframe to Store Friends Details
 friends_data = pd.DataFrame({"Name":friendsName,"Profile Link":friendsList})
+
+# ====== Google Search [Bonus Demonstration] ====== #
+
+## Area to search
+query = ["Data Science","Data Analysis","Data Engineering"]
+querydata = []
+
+for i in query:
+    querylist = []
+    ## Google Search
+    for j in search(i.lower(), tld="co.in", num=10, stop=10, pause=2):
+        if "wikipedia" in j.lower():
+            querylist.append(j)
+    querydata.append(querylist[0])
+    
