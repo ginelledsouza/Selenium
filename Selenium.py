@@ -10,7 +10,7 @@ chrome_options.add_argument("--disable-notifications")
 
 driver = webdriver.Chrome(ChromeDriverManager().install(),chrome_options=chrome_options)
 
-# 1. Testing a website
+# ====== 1. Testing a website ====== #
 
 ## Loading the website
 driver.get("https://pricebaba.com/") 
@@ -32,7 +32,7 @@ driver.find_element_by_xpath('//*[@id="mainBody"]/div[1]/div[3]/div[1]/div[1]/di
 driver.find_element_by_xpath('//*[@id="Mobiles-main"]/a').click()
 driver.find_element_by_xpath('//*[@id="mainBody"]/div[1]/div[6]/div[6]/div/div[1]/div[2]/ul/li[1]/a/div[1]/div/img').click()
 
-# 2. Reading Data from a website
+# ====== 2. Reading Data from a website ====== #
 
 website = "https://en.wikipedia.org/wiki/Selenium_(software)"
 driver.get(website) 
@@ -48,7 +48,7 @@ scrapeddata = s.get_text()
 
 print("The data scraped from {} is \n{}".format(website,scrapeddata))
 
-# 3. Extracting Data from a social media platform - Facebook
+# ====== 3. Extracting Data from a social media platform - Facebook ====== #
 
 email_id = <emailid>
 password = <password>
@@ -74,16 +74,16 @@ friendsdata = element.get_attribute('outerHTML')
 
 s = BeautifulSoup(friendsdata, 'html.parser') 
 
-# Extract Friends Profile Link
+## Extract Friends Profile Link
 friendsList = s.find_all('a')
 friendsList = [pt['href'] for pt in friendsList]
 friendsList = [pt for pt in friendsList if len(pt)>20]
 
-# Extract Friends Name
+## Extract Friends Name
 friendsName = s.find_all('span',{'class':'d2edcug0 hpfvmrgz qv66sw1b c1et5uql lr9zc1uh jq4qci2q a3bd9o3v lrazzd5p oo9gr5id'})
 friendsName = [pt.get_text() for pt in friendsName]
 
-# Create Dataframe to Store Friends Details
+## Create Dataframe to Store Friends Details
 friends_data = pd.DataFrame({"Name":friendsName,"Profile Link":friendsList})
 
 # ====== Google Search [Bonus Demonstration] ====== #
