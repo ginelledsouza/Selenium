@@ -56,7 +56,6 @@ password = <password>
 driver.get("https://www.facebook.com/friends/list") 
 driver.maximize_window()
   
-driver.find_element_by_xpath('//*[@id="pageFooter"]/ul/li[11]/a').click()
 driver.implicitly_wait(10)
 driver.find_element_by_xpath('//*[@id="email"]').send_keys(email_id)
 driver.find_element_by_xpath('//*[@id="pass"]').send_keys(password)
